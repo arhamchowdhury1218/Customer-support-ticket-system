@@ -34,7 +34,7 @@ const Banner = () => {
       >
         <div className="space-y-4 text-center">
           <h1 className="text-white font-bold text-3xl md:text-5xl mt-10">
-            In-Progress
+            Resolved
           </h1>
 
           <p className="text-white text-7xl mb-10">0</p>

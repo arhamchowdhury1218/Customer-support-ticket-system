@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ellipse from "../../assets/Ellipse.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHashtag, faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 const CustomerTicket = ({ ticket }) => {
-  console.log(ticket);
   const { id, createdAt, customer, description, priority, status, title } =
     ticket;
-
+  const [ticketStatus, setTicketstatus] = useState([]);
   return (
     <div className="">
       <div className="space-y-2 shadow-xl py-3">

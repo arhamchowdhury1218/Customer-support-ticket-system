@@ -23,7 +23,7 @@
     "description": "Server returns 500 error when submitting order.",
     "customer": "Alice Johnson",
     "priority": "High",
-    "status": "Resolved",
+    "status": "In-Progress",
     "createdAt": "3/1/2026"
   },
   {
@@ -59,7 +59,7 @@
     "description": "Users not receiving push notifications.",
     "customer": "Emma Davis",
     "priority": "Medium",
-    "status": "Resolved",
+    "status": "In-Progress",
     "createdAt": "3/4/2026"
   },
   {
@@ -86,7 +86,7 @@
     "description": "Search results do not match keywords.",
     "customer": "Henry Clark",
     "priority": "Medium",
-    "status": "Resolved",
+    "status": "In-Progress",
     "createdAt": "3/4/2026"
   },
   {
@@ -104,7 +104,7 @@
     "description": "Users cannot update their profile images.",
     "customer": "Jack White",
     "priority": "Low",
-    "status": "Resolved",
+    "status": "In-Progress",
     "createdAt": "3/1/2026"
   }
 ]
