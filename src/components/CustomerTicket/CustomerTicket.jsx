@@ -1,19 +1,37 @@
 import React, { useState } from "react";
 import ellipse from "../../assets/Ellipse.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHashtag, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHashtag,
+  faCalendar,
+  faCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 const CustomerTicket = ({ ticket }) => {
   const { id, createdAt, customer, description, priority, status, title } =
     ticket;
-  const [ticketStatus, setTicketstatus] = useState([]);
+  const [ticketStatus, setTicketstatus] = useState(true);
+  const priorityStyles = {
+    "HIGH PRIORITY": "text-red-400 font-semibold",
+    "MEDIUM PRIORITY": "text-yellow-500 font-semibold",
+    "LOW PRIORITY": "text-green-600 font-semibold",
+  };
   return (
     <div className="">
       <div className="space-y-2 shadow-xl py-3">
         <div className="flex items-center justify-between">
           <h1 className="text-black font-semibold text-xl">{title}</h1>
-          <div className="flex gap-1 items-center px-4 py-2 rounded-3xl bg-[#B9F8CF]">
-            <img src={ellipse} alt="" />
+          <div
+            className={`flex gap-1 items-center px-4 py-2 rounded-3xl ${
+              status === "Open" ? "bg-[#B9F8CF]" : "bg-[#F8F3B9]"
+            }`}
+          >
+            <FontAwesomeIcon
+              className={`text-xs ${
+                status === "Open" ? "text-[#02A53B]" : "text-[#FEBB0C]"
+              }`}
+              icon={faCircle}
+            />
             <h1>{status}</h1>
           </div>
         </div>
@@ -25,7 +43,7 @@ const CustomerTicket = ({ ticket }) => {
               <p>{id}</p>
             </div>
 
-            <p className="text-red-600 ">{priority}</p>
+            <p className={priorityStyles[priority]}>{priority}</p>
           </div>
           <div className="flex items-center gap-4">
             <p>{customer}</p>
