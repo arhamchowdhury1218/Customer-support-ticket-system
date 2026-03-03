@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1001,
+    "title": "Login Issue",
+    "description": "User cannot log in with correct credentials.",
+    "customer": "John Doe",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "3/1/2026"
+  },
+  {
+    "id": 1002,
+    "title": "Page Not Loading",
+    "description": "Dashboard page shows blank after login.",
+    "customer": "Jane Smith",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "3/2/2026"
+  },
+  {
+    "id": 1003,
+    "title": "Error 500 on Checkout",
+    "description": "Server returns 500 error when submitting order.",
+    "customer": "Alice Johnson",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "3/1/2026"
+  },
+  {
+    "id": 1004,
+    "title": "Password Reset Not Working",
+    "description": "Password reset email not received.",
+    "customer": "Bob Lee",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "3/3/2026"
+  },
+  {
+    "id": 1005,
+    "title": "UI Overlapping",
+    "description": "Buttons overlap on mobile devices.",
+    "customer": "Cathy Brown",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "3/2/2026"
+  },
+  {
+    "id": 1006,
+    "title": "Cannot Upload Files",
+    "description": "File upload fails with timeout error.",
+    "customer": "David Wi1001son",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "3/1/2026"
+  },
+  {
+    "id": 1007,
+    "title": "Notification Bug",
+    "description": "Users not receiving push notifications.",
+    "customer": "Emma Davis",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "3/4/2026"
+  },
+  {
+    "id": 1008,
+    "title": "Slow Page Load",
+    "description": "Landing page takes too long to load.",
+    "customer": "Frank Miller",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "3/2/2026"
+  },
+  {
+    "id": 1009,
+    "title": "Incorrect Invoice",
+    "description": "Invoice shows wrong total amount.",
+    "customer": "Grace Lee",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "3/3/2026"
+  },
+  {
+    "id": 1010,
+    "title": "Search Not Working",
+    "description": "Search results do not match keywords.",
+    "customer": "Henry Clark",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "3/4/2026"
+  },
+  {
+    "id": 1012,
+    "title": "Payment Gateway Error",
+    "description": "Payment fails with unknown error code.",
+    "customer": "Isla Turner",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "3/4/2026"
+  },
+  {
+    "id": 1012,
+    "title": "Profile Picture Not Updating",
+    "description": "Users cannot update their profile images.",
+    "customer": "Jack White",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "3/1/2026"
+  }
+]

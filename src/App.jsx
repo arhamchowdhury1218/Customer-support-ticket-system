@@ -1,16 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import Banner from "./components/Banner/Banner";
+import CustomerTickets from "./components/CustomerTickets/CustomerTickets";
+
+const fetchCustomerTickets = async () => {
+  const response = await fetch("/customer_tickets.json");
+  const responseJson = response.json();
+  return responseJson;
+};
+
+const loadCustomertickets = fetchCustomerTickets();
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="max-w-full md:w-11/12 mx-auto">
       <Navbar></Navbar>
-      <h1 className="text-2xl">Vite + React</h1>
+      <Banner></Banner>
+      <CustomerTickets
+        loadCustomertickets={loadCustomertickets}
+      ></CustomerTickets>
     </div>
   );
 }
