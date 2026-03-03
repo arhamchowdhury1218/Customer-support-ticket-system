@@ -1,12 +1,19 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import CustomerTicket from "../CustomerTicket/CustomerTicket";
+import TaskStatus from "../TaskStatus/TaskStatus";
+import ResolvedTask from "../ResolvedTask/ResolvedTask";
 
 const CustomerTickets = ({ loadCustomertickets }) => {
   const tickets = use(loadCustomertickets);
-  console.log(tickets);
+  const [textStatusTicket, setTextStatusticket] = useState([]);
+  const handleTextStatusticket = (ticket) => {
+    console.log("hello", ticket);
+    const newTickets = [...textStatusTicket, ticket];
+    setTextStatusticket(newTickets);
+  };
   return (
-    <div className="mt-10 grid grid-cols-1 md:grid-cols-4 mx-4">
-      <div className="col-span-3">
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-4 mx-4 gap-14">
+      <div className="col-span-1 md:col-span-3">
         {" "}
         <h1 className="text-3xl text-gray-800 font-semibold">
           {" "}
@@ -15,12 +22,28 @@ const CustomerTickets = ({ loadCustomertickets }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {" "}
           {tickets.map((ticket) => (
-            <CustomerTicket key={ticket.id} ticket={ticket}></CustomerTicket>
+            <CustomerTicket
+              key={ticket.id}
+              ticket={ticket}
+              handleTextStatusticket={handleTextStatusticket}
+            ></CustomerTicket>
           ))}
         </div>
       </div>
 
-      <div className="col-span-1">Task Status</div>
+      <div className="col-span-1 space-y-4">
+        <h1 className="text-3xl text-gray-800 font-semibold">Text Status</h1>
+        {textStatusTicket.length ? (
+          <TaskStatus
+            key={textStatusTicket.id}
+            textStatusTicket={textStatusTicket}
+          ></TaskStatus>
+        ) : (
+          <p className="text-gray-500">Select a ticket to add to Task Status</p>
+        )}
+
+        <ResolvedTask></ResolvedTask>
+      </div>
     </div>
   );
 };

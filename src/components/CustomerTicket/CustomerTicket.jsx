@@ -7,7 +7,7 @@ import {
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-const CustomerTicket = ({ ticket }) => {
+const CustomerTicket = ({ ticket, handleTextStatusticket }) => {
   const { id, createdAt, customer, description, priority, status, title } =
     ticket;
   const [ticketStatus, setTicketstatus] = useState(true);
@@ -17,8 +17,11 @@ const CustomerTicket = ({ ticket }) => {
     "LOW PRIORITY": "text-green-600 font-semibold",
   };
   return (
-    <div className="">
-      <div className="space-y-2 shadow-xl py-3">
+    <div>
+      <div
+        onClick={() => handleTextStatusticket(ticket)}
+        className="space-y-2 shadow-xl py-3"
+      >
         <div className="flex items-center justify-between">
           <h1 className="text-black font-semibold text-xl">{title}</h1>
           <div
