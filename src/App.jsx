@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Banner";
 import CustomerTickets from "./components/CustomerTickets/CustomerTickets";
 import { useState } from "react";
 import Footer from "./components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const fetchCustomerTickets = async () => {
   const response = await fetch("/customer_tickets.json");
@@ -30,6 +31,7 @@ function App() {
         handleInProgressCount={handleInProgressCount}
       ></CustomerTickets>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

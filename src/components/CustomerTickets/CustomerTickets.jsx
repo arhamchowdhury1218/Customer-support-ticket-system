@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import CustomerTicket from "../CustomerTicket/CustomerTicket";
 import TaskStatus from "../TaskStatus/TaskStatus";
 import ResolvedTask from "../ResolvedTask/ResolvedTask";
+import { toast } from "react-toastify";
 
 const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
   const tickets = use(loadCustomertickets);
@@ -11,6 +12,7 @@ const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
     const newTickets = [...textStatusTicket, ticket];
     setTextStatusticket(newTickets);
     handleInProgressCount(newTickets.length);
+    toast("Card Added to Text Status Section");
   };
   return (
     <div className="max-w-full md:w-11/12 mx-auto">
