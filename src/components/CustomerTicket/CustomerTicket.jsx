@@ -10,7 +10,6 @@ import {
 const CustomerTicket = ({ ticket, handleTextStatusticket }) => {
   const { id, createdAt, customer, description, priority, status, title } =
     ticket;
-  const [ticketStatus, setTicketstatus] = useState(true);
   const priorityStyles = {
     "HIGH PRIORITY": "text-red-400 font-semibold",
     "MEDIUM PRIORITY": "text-yellow-500 font-semibold",

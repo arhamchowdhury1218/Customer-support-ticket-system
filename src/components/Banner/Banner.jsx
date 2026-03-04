@@ -1,7 +1,8 @@
 import vectorBg from "../../assets/vector1.png";
 import vectorBg2 from "../../assets/vector2.png";
 
-const Banner = () => {
+const Banner = ({ inProgressCount }) => {
+  console.log(inProgressCount, "sdadasdsa");
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 mx-4">
       <div
@@ -19,7 +20,7 @@ const Banner = () => {
             In-Progress
           </h1>
 
-          <p className="text-white text-7xl mb-10">0</p>
+          <p className="text-white text-7xl mb-10">{inProgressCount}</p>
         </div>
       </div>
       <div

@@ -3,13 +3,14 @@ import CustomerTicket from "../CustomerTicket/CustomerTicket";
 import TaskStatus from "../TaskStatus/TaskStatus";
 import ResolvedTask from "../ResolvedTask/ResolvedTask";
 
-const CustomerTickets = ({ loadCustomertickets }) => {
+const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
   const tickets = use(loadCustomertickets);
   const [textStatusTicket, setTextStatusticket] = useState([]);
   const handleTextStatusticket = (ticket) => {
     console.log("hello", ticket);
     const newTickets = [...textStatusTicket, ticket];
     setTextStatusticket(newTickets);
+    handleInProgressCount(newTickets.length);
   };
   return (
     <div className="mt-10 grid grid-cols-1 md:grid-cols-4 mx-4 gap-14">
