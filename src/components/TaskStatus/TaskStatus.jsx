@@ -1,7 +1,7 @@
 import React from "react";
 import SingleTaskStatus from "../SingleTaskStatus/SingleTaskStatus";
 
-const TaskStatus = ({ textStatusTicket }) => {
+const TaskStatus = ({ textStatusTicket, handleResolvedTask }) => {
   console.log("textStatusTicket", textStatusTicket);
 
   return (
@@ -10,6 +10,7 @@ const TaskStatus = ({ textStatusTicket }) => {
         <SingleTaskStatus
           key={singleTaskStatus.id}
           singleTaskStatus={singleTaskStatus}
+          handleResolvedTask={handleResolvedTask}
         ></SingleTaskStatus>
       ))}
     </div>

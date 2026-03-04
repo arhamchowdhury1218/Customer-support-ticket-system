@@ -14,6 +14,14 @@ const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
     handleInProgressCount(newTickets.length);
     toast("Card Added to Text Status Section");
   };
+  const handleResolvedTask = (singleTaskStatus) => {
+    console.log("Resolved Task", singleTaskStatus);
+    const newTicketStatus = textStatusTicket.filter(
+      (removeTicket) => removeTicket.id !== singleTaskStatus.id,
+    );
+    setTextStatusticket(newTicketStatus);
+    handleInProgressCount(newTicketStatus.length);
+  };
   return (
     <div className="max-w-full md:w-11/12 mx-auto">
       <div className="mt-10 grid grid-cols-1 md:grid-cols-4 mx-4 gap-14">
@@ -41,6 +49,7 @@ const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
             <TaskStatus
               key={textStatusTicket.id}
               textStatusTicket={textStatusTicket}
+              handleResolvedTask={handleResolvedTask}
             ></TaskStatus>
           ) : (
             <p className="text-gray-500">
