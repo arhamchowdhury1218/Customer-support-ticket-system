@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 import CustomerTickets from "./components/CustomerTickets/CustomerTickets";
 import { useState } from "react";
+import Footer from "./components/Footer/Footer";
 
 const fetchCustomerTickets = async () => {
   const response = await fetch("/customer_tickets.json");
@@ -21,13 +22,14 @@ function App() {
   };
 
   return (
-    <div className="max-w-full md:w-11/12 mx-auto">
+    <div>
       <Navbar></Navbar>
       <Banner inProgressCount={inProgressCount}></Banner>
       <CustomerTickets
         loadCustomertickets={loadCustomertickets}
         handleInProgressCount={handleInProgressCount}
       ></CustomerTickets>
+      <Footer></Footer>
     </div>
   );
 }
