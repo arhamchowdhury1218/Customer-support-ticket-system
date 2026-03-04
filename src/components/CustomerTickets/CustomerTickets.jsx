@@ -7,20 +7,21 @@ import { toast } from "react-toastify";
 const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
   const tickets = use(loadCustomertickets);
   const [textStatusTicket, setTextStatusticket] = useState([]);
+  const [resolveStatusTicket, setResolveStatusTicket] = useState([]);
   const handleTextStatusticket = (ticket) => {
-    console.log("hello", ticket);
     const newTickets = [...textStatusTicket, ticket];
     setTextStatusticket(newTickets);
     handleInProgressCount(newTickets.length);
     toast("Card Added to Text Status Section");
   };
   const handleResolvedTask = (singleTaskStatus) => {
-    console.log("Resolved Task", singleTaskStatus);
     const newTicketStatus = textStatusTicket.filter(
       (removeTicket) => removeTicket.id !== singleTaskStatus.id,
     );
+    console.log(newTicketStatus);
     setTextStatusticket(newTicketStatus);
     handleInProgressCount(newTicketStatus.length);
+    setResolveStatusTicket([...resolveStatusTicket, singleTaskStatus]);
   };
   return (
     <div className="max-w-full md:w-11/12 mx-auto">
@@ -56,8 +57,16 @@ const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
               Select a ticket to add to Task Status
             </p>
           )}
-
-          <ResolvedTask></ResolvedTask>
+          <h1 className="text-3xl text-gray-800 font-semibold">
+            Resolved Task
+          </h1>
+          {resolveStatusTicket.length > 0 ? (
+            resolveStatusTicket.map((ticket) => (
+              <ResolvedTask key={ticket.id} resolveTicket={ticket} />
+            ))
+          ) : (
+            <p className="text-gray-500">No resolved tasks yet.</p>
+          )}
         </div>
       </div>
     </div>

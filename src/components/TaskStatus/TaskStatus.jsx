@@ -2,8 +2,6 @@ import React from "react";
 import SingleTaskStatus from "../SingleTaskStatus/SingleTaskStatus";
 
 const TaskStatus = ({ textStatusTicket, handleResolvedTask }) => {
-  console.log("textStatusTicket", textStatusTicket);
-
   return (
     <div className="space-y-5">
       {textStatusTicket.map((singleTaskStatus) => (

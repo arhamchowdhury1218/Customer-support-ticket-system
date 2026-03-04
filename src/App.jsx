@@ -18,7 +18,6 @@ function App() {
   const [inProgressCount, setInProgressCount] = useState(0);
 
   const handleInProgressCount = (count) => {
-    console.log("handleInProgressCount", count);
     setInProgressCount(count);
   };
 

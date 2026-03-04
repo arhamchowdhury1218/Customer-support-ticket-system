@@ -2,7 +2,6 @@ import vectorBg from "../../assets/vector1.png";
 import vectorBg2 from "../../assets/vector2.png";
 
 const Banner = ({ inProgressCount }) => {
-  console.log(inProgressCount, "sdadasdsa");
   return (
     <div className="max-w-full md:w-11/12 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 mx-4">
