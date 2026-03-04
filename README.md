@@ -1,16 +1,12 @@
-# React + Vite
+1. What is JSX, and why is it used?
+   Ans: JSX is JavaScript XML language. It is used because, both javascipt and HTML can be written in this file.
+2. What is the difference between State and Props?
+   Ans: State is the current condition of an object but Props are sending information from parent to child.
+3. What is the useState hook, and how does it work?
+   Ans: The useState hook is a react hook where you can handle the conddition of a variable. To use useState hook a variable and a call back function is declared. Whenever the variable value changes you need to call the call back function to set the value of the variable which will be stored in the variable which was set when useState was declared. Moreover the initial value need to set fopr the useState(), it can be anything "", null, 0 , undefined.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+4. How can you share state between components in React?
+   Ans: You need to use the concept of lift up state, to communicate between the components to the share the state.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+5. How is event handling done in React?
+   Ans: Using onClick = {} event handling is done in React.

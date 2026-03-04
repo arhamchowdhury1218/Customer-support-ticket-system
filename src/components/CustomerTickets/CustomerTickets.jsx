@@ -10,6 +10,12 @@ const CustomerTickets = ({
   handleResolveCount,
 }) => {
   const tickets = use(loadCustomertickets);
+  const [newTickets, setNewTickets] = useState([]);
+  React.useEffect(() => {
+    if (tickets) {
+      setNewTickets(tickets);
+    }
+  }, [tickets]);
   const [textStatusTicket, setTextStatusticket] = useState([]);
   const [resolveStatusTicket, setResolveStatusTicket] = useState([]);
   const handleTextStatusticket = (ticket) => {
@@ -18,19 +24,29 @@ const CustomerTickets = ({
     handleInProgressCount(newTickets.length);
     toast("Card Added to Text Status Section");
   };
+
   const handleResolvedTask = (singleTaskStatus) => {
-    const newTicketStatus = textStatusTicket.filter(
-      (removeTicket) => removeTicket.id !== singleTaskStatus.id,
+    const filteredTextStatus = textStatusTicket.filter(
+      (ticket) => ticket.id !== singleTaskStatus.id,
     );
-    console.log(newTicketStatus);
-    setTextStatusticket(newTicketStatus);
-    handleInProgressCount(newTicketStatus.length);
-    const newSetResolveStatusTicket = [
-      ...resolveStatusTicket,
-      singleTaskStatus,
-    ];
-    setResolveStatusTicket(newSetResolveStatusTicket);
-    handleResolveCount(newSetResolveStatusTicket.length);
+    setTextStatusticket(filteredTextStatus);
+    handleInProgressCount(filteredTextStatus.length);
+
+    const updatedResolved = [...resolveStatusTicket, singleTaskStatus];
+    setResolveStatusTicket(updatedResolved);
+    handleResolveCount(updatedResolved.length);
+
+    handleTicketsAfterComplete(singleTaskStatus);
+
+    toast.success("Task moved to Resolved!");
+  };
+
+  const handleTicketsAfterComplete = (singleTaskStatus) => {
+    const remainingTickets = newTickets.filter(
+      (ticket) => ticket.id !== singleTaskStatus.id,
+    );
+
+    setNewTickets(remainingTickets);
   };
 
   return (
@@ -44,7 +60,7 @@ const CustomerTickets = ({
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {" "}
-            {tickets.map((ticket) => (
+            {newTickets.map((ticket) => (
               <CustomerTicket
                 key={ticket.id}
                 ticket={ticket}
