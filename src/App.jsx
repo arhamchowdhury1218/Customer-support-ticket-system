@@ -16,18 +16,28 @@ const loadCustomertickets = fetchCustomerTickets();
 
 function App() {
   const [inProgressCount, setInProgressCount] = useState(0);
+  const [resolveCount, setResolveCountCount] = useState(0);
 
   const handleInProgressCount = (count) => {
     setInProgressCount(count);
   };
 
+  const handleResolveCount = (count) => {
+    setResolveCountCount(count);
+  };
+
   return (
     <div>
       <Navbar></Navbar>
-      <Banner inProgressCount={inProgressCount}></Banner>
+      <Banner
+        inProgressCount={inProgressCount}
+        handleResolveCount={handleResolveCount}
+        resolveCount={resolveCount}
+      ></Banner>
       <CustomerTickets
         loadCustomertickets={loadCustomertickets}
         handleInProgressCount={handleInProgressCount}
+        handleResolveCount={handleResolveCount}
       ></CustomerTickets>
       <Footer></Footer>
       <ToastContainer />

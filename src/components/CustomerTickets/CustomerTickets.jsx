@@ -4,7 +4,11 @@ import TaskStatus from "../TaskStatus/TaskStatus";
 import ResolvedTask from "../ResolvedTask/ResolvedTask";
 import { toast } from "react-toastify";
 
-const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
+const CustomerTickets = ({
+  loadCustomertickets,
+  handleInProgressCount,
+  handleResolveCount,
+}) => {
   const tickets = use(loadCustomertickets);
   const [textStatusTicket, setTextStatusticket] = useState([]);
   const [resolveStatusTicket, setResolveStatusTicket] = useState([]);
@@ -21,8 +25,14 @@ const CustomerTickets = ({ loadCustomertickets, handleInProgressCount }) => {
     console.log(newTicketStatus);
     setTextStatusticket(newTicketStatus);
     handleInProgressCount(newTicketStatus.length);
-    setResolveStatusTicket([...resolveStatusTicket, singleTaskStatus]);
+    const newSetResolveStatusTicket = [
+      ...resolveStatusTicket,
+      singleTaskStatus,
+    ];
+    setResolveStatusTicket(newSetResolveStatusTicket);
+    handleResolveCount(newSetResolveStatusTicket.length);
   };
+
   return (
     <div className="max-w-full md:w-11/12 mx-auto">
       <div className="mt-10 grid grid-cols-1 md:grid-cols-4 mx-4 gap-14">
